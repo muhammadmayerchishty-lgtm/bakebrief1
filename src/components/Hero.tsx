@@ -4,6 +4,7 @@ import { ArrowRight, Play, Eye, Sparkles, ShieldCheck, Flame, Award } from 'luci
 import { ASSETS } from '../data/menuData';
 import Magnetic from './Magnetic';
 import TiltCard from './TiltCard';
+import Vapi from "@vapi-ai/web";
 
 interface HeroProps {
   onExploreMenu: () => void;
@@ -12,6 +13,15 @@ interface HeroProps {
 }
 
 export default function Hero({ onExploreMenu, onOpenReservation, onWatchLive }: HeroProps) {
+  const vapi = new Vapi("69a43754-fb90-46ad-a47f-23b1cac51f6d");
+
+const startCall = async () => {
+  try {
+    await vapi.start("4e15b072-37b2-4003-a1df-fabfae229ebb");
+  } catch (err) {
+    console.error(err);
+  }
+};
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   // Scroll Parallax
@@ -133,7 +143,7 @@ export default function Hero({ onExploreMenu, onOpenReservation, onWatchLive }: 
 
           <Magnetic strength={0.25} className="w-full sm:w-auto">
             <button
-              onClick={onWatchLive}
+             onClick={startCall}
               data-cursor="LIVE VIEW"
               className="w-full sm:w-auto px-7 py-3.5 text-xs uppercase tracking-[0.2em] font-medium text-white/90 bg-black/60 border border-white/20 hover:border-[#C5A059] hover:bg-white hover:text-black rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 backdrop-blur-md"
             >
@@ -150,6 +160,14 @@ export default function Hero({ onExploreMenu, onOpenReservation, onWatchLive }: 
             >
               <ShieldCheck className="w-4 h-4" />
               <span>Request Brief Bench</span>
+              <Magnetic strength={0.25} className="w-full sm:w-auto">
+  <button
+    onClick={startCall}
+    className="w-full sm:w-auto px-7 py-3.5 text-xs uppercase tracking-[0.2em] font-bold text-black bg-green-500 rounded-full hover:bg-green-400 transition-all duration-300"
+  >
+    🎙 Talk with AI Assistant
+  </button>
+</Magnetic>
             </button>
           </Magnetic>
         </motion.div>
