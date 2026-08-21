@@ -1,1 +1,0 @@
-{"buildCommand":"npm install --include=dev && vite build","outputDirectory":"dist"}
