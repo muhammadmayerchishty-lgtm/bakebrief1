@@ -1,0 +1,6 @@
+{
+  "name": "BakeBrief",
+  "description": "Every Bite Wins The Case - World-class luxury bakery inspired by the legal profession.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
