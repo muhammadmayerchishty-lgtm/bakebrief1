@@ -63,7 +63,7 @@ const startCall = async () => {
       </div>
 
       {/* Parallax Background Image */}
-      <motion.div style={{ y: heroImageY, x: parallaxX, y: parallaxY }} className="absolute inset-0 z-0">
+      <motion.div style={{ x: parallaxX, y: parallaxY }} className="absolute inset-0 z-0">
         <img
           src={ASSETS.storefront}
           alt="BakeBrief Luxury Storefront"
